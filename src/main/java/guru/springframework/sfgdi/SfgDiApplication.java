@@ -18,8 +18,8 @@ public class SfgDiApplication {
         *  This is the Dependency Injection
         * */
         MyController myController = (MyController) ctx.getBean("myController");
-        String greeting = myController.sayHello();
-        System.out.println(greeting);
+        System.out.println(" --- Primary Bean");
+        System.out.println(myController.sayHello());
         System.out.println(" --- Property");
         PropertyInjectedController propertyInjectedController = (PropertyInjectedController)  ctx.getBean("propertyInjectedController");
         System.out.println(propertyInjectedController.greetingService.sayGreeting());
