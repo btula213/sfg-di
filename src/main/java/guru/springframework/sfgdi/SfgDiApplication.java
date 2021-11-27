@@ -2,6 +2,7 @@ package guru.springframework.sfgdi;
 
 
 import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.sfgdi.service.I18nEnglishGreetingService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -40,6 +41,9 @@ public class SfgDiApplication {
         System.out.println(" --- Contructor Injected");
         ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController)  ctx.getBean("constructorInjectedController");
         System.out.println(constructorInjectedController.getGreeting());
+
+        System.out.println(" 000 English Greeting Service 000");
+
 
 
     }
