@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {"com.springframework.pets","guru.springframework.sfgdi" })
+//@ComponentScan(basePackages = {"com.springframework.pets","guru.springframework.sfgdi" })
 @SpringBootApplication
 public class SfgDiApplication {
 
@@ -20,6 +20,10 @@ public class SfgDiApplication {
         * */
 
         I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+        PetController petController = ctx.getBean("petController", PetController.class);
+        System.out.println("--- The Best Pet is ---");
+        System.out.println(petController.whichPetIsTheBest());
 
         /* Based on the active profile defined in the application.properties,
         *  it will display the message from English or Spanish Bean
