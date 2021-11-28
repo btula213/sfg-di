@@ -2,6 +2,7 @@ package guru.springframework.sfgdi;
 
 
 import guru.springframework.sfgdi.controllers.*;
+import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.service.I18nEnglishGreetingService;
 import guru.springframework.sfgdi.service.PrototypeBean;
 import guru.springframework.sfgdi.service.SingletonBean;
@@ -60,6 +61,13 @@ public class SfgDiApplication {
         System.out.println("Prototype Bean 1: "+prototypeBean1.getMyScope());
         PrototypeBean prototypeBean2  = ctx.getBean(PrototypeBean.class);
         System.out.println("Prototype Bean 2: "+prototypeBean2.getMyScope());
+
+        FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+        System.out.println("FakeDatasource : \n-------------------\nUsername : "+fakeDataSource.getUsername());
+        System.out.println("Pasword: "+fakeDataSource.getPassword());
+        System.out.println("URL: "+fakeDataSource.getJdbcurl());
+        System.out.println("-------------------");
+
     }
 
 }
